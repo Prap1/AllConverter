@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Globe, Mail, Link as LinkIcon } from "lucide-react";
 
@@ -7,9 +8,14 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div className="sm:col-span-2 md:col-span-1">
-          <span className="font-bold tracking-tight text-lg mb-4 block text-[hsl(var(--foreground))]">
-            AllConverter
-          </span>
+          <Link href="/" className="flex items-center gap-2 mb-4 hover:opacity-85 transition-opacity w-fit">
+            <div className="relative h-10 w-10 overflow-hidden rounded-md">
+              <Image src="/logo.png" alt="FileNexa logo" fill className="object-cover" />
+            </div>
+            <span className="font-bold tracking-tight text-xl text-[hsl(var(--foreground))]">
+              FileNexa
+            </span>
+          </Link>
           <p className="text-[hsl(var(--muted-foreground))] text-sm max-w-sm">
             Your all-in-one suite for lightning fast, secure, and fully private file conversions.
             Built with modern web technologies.
@@ -65,7 +71,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="container mx-auto px-4 sm:px-8 mt-12 pt-8 border-t text-sm text-[hsl(var(--muted-foreground))] flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>&copy; {new Date().getFullYear()} AllConverter. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} FileNexa. All rights reserved.</p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link href="/about" className="hover:underline">About Us</Link>
           <Link href="/contact" className="hover:underline">Contact Us</Link>

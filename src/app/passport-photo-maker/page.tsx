@@ -89,7 +89,7 @@ export default function PassportPhotoMakerPage() {
           A passport photo maker helps you resize and format a portrait photo to meet the strict size, background, and print layout requirements of official documents — passports, visas, ID cards, and more. Different countries have specific requirements (e.g. 35×45 mm for India/UK, 2×2 inches for the USA).
         </p>
         <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-          AllConverter's tool lets you pick the correct size, choose a background colour, and instantly generate a print-ready sheet — all{" "}
+          FileNexa's tool lets you pick the correct size, choose a background colour, and instantly generate a print-ready sheet — all{" "}
           <strong className="text-[hsl(var(--foreground))]">without leaving your browser</strong>.
         </p>
       </div>

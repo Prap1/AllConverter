@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us – AllConverter",
+  title: "Contact Us – FileNexa",
   description:
-    "Get in touch with the AllConverter team. We're happy to hear from you.",
+    "Get in touch with the FileNexa team. We're happy to hear from you.",
 };
 
 const contactItems = [

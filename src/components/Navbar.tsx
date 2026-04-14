@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Moon, Sun, Monitor, Menu } from "lucide-react";
+import { Moon, Sun, Menu } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -31,10 +32,12 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b backdrop-blur-md bg-[hsl(var(--background))]/80">
       <div className="container mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2">
-            <Monitor className="h-6 w-6 text-[hsl(var(--primary))]" />
-            <span className="font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
-              AllConverter
+          <Link href="/" className="flex items-center gap-2 hover:opacity-85 transition-opacity">
+            <div className="relative h-10 w-10 overflow-hidden rounded-md">
+              <Image src="/logo.png" alt="FileNexa logo" fill className="object-cover" />
+            </div>
+            <span className="font-bold text-xl tracking-tight text-[hsl(var(--foreground))]">
+              FileNexa
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-1">

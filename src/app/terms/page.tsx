@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions – AllConverter",
+  title: "Terms & Conditions – FileNexa",
   description:
-    "Read the AllConverter Terms & Conditions. By using our tools you agree to these terms.",
+    "Read the FileNexa Terms & Conditions. By using our tools you agree to these terms.",
 };
 
 export default function TermsPage() {
@@ -43,7 +43,7 @@ export default function TermsPage() {
               <p>
                 By accessing or using{" "}
                 <strong className="text-[hsl(var(--foreground))]">
-                  AllConverter
+                  FileNexa
                 </strong>{" "}
                 ("the Service"), you agree to be bound by these Terms &
                 Conditions. If you do not agree with any part of these terms,
@@ -55,7 +55,7 @@ export default function TermsPage() {
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
                 2. Use of the Service
               </h2>
-              <p>You agree to use AllConverter only for lawful purposes. You must not:</p>
+              <p>You agree to use FileNexa only for lawful purposes. You must not:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>Use the Service for any illegal or unauthorized purpose.</li>
                 <li>
@@ -79,7 +79,7 @@ export default function TermsPage() {
               </h2>
               <p>
                 All content, design, code, and trademarks associated with
-                AllConverter are the exclusive property of AllConverter and its
+                FileNexa are the exclusive property of FileNexa and its
                 creators. You may not copy, modify, or distribute any part of
                 the Service without prior written consent.
               </p>
@@ -90,7 +90,7 @@ export default function TermsPage() {
                 4. Disclaimer of Warranties
               </h2>
               <p>
-                AllConverter is provided on an{" "}
+                FileNexa is provided on an{" "}
                 <strong className="text-[hsl(var(--foreground))]">
                   "as is" and "as available"
                 </strong>{" "}
@@ -105,7 +105,7 @@ export default function TermsPage() {
                 5. Limitation of Liability
               </h2>
               <p>
-                To the fullest extent permitted by law, AllConverter and its
+                To the fullest extent permitted by law, FileNexa and its
                 creators shall not be liable for any indirect, incidental,
                 special, consequential, or punitive damages arising from your
                 use of the Service, including but not limited to loss of data or
@@ -120,7 +120,7 @@ export default function TermsPage() {
               <p>
                 All file processing occurs locally in your browser. You are
                 solely responsible for the content of files you process using
-                AllConverter. We disclaim all responsibility for any file
+                FileNexa. We disclaim all responsibility for any file
                 content processed through the Service.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function TermsPage() {
               <p>
                 We may revise these Terms from time to time. The most current
                 version will always be posted on this page. Continued use of
-                AllConverter after changes constitutes your acceptance of the
+                FileNexa after changes constitutes your acceptance of the
                 new terms.
               </p>
             </div>

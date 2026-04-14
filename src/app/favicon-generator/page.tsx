@@ -89,7 +89,7 @@ export default function FaviconMakerPage() {
           A favicon (short for "favourite icon") is the small icon displayed in a browser tab, bookmarks bar, and search results next to your website's name. It plays a key role in brand recognition and user experience. The standard format is <strong className="text-[hsl(var(--foreground))]">favicon.ico</strong>, but modern browsers also support PNG and SVG favicons at various sizes.
         </p>
         <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-          AllConverter generates all the necessary sizes — 16×16, 32×32, 48×48, and 180×180 (Apple Touch Icon) — from a single image,{" "}
+          FileNexa generates all the necessary sizes — 16×16, 32×32, 48×48, and 180×180 (Apple Touch Icon) — from a single image,{" "}
           <strong className="text-[hsl(var(--foreground))]">right in your browser</strong>.
         </p>
       </div>

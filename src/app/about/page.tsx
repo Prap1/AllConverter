@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Monitor, Zap, Shield, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us – AllConverter",
+  title: "About Us – FileNexa",
   description:
-    "Learn about AllConverter — our mission, values, and the team behind the fastest, most secure file conversion tool on the web.",
+    "Learn about FileNexa — our mission, values, and the team behind the fastest, most secure file conversion tool on the web.",
 };
 
 const features = [
@@ -24,13 +24,13 @@ const features = [
     icon: Globe,
     title: "Always Free",
     description:
-      "AllConverter is and will always be free to use. No subscriptions, no hidden costs, no watermarks.",
+      "FileNexa is and will always be free to use. No subscriptions, no hidden costs, no watermarks.",
   },
   {
     icon: Monitor,
     title: "Works Everywhere",
     description:
-      "Whether you're on a phone, tablet, or desktop — AllConverter adapts beautifully to any screen size.",
+      "Whether you're on a phone, tablet, or desktop — FileNexa adapts beautifully to any screen size.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] px-4 py-1.5 rounded-full text-sm font-medium mb-6">
             <Monitor className="w-4 h-4 text-[hsl(var(--primary))]" />
-            About AllConverter
+            About FileNexa
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
             Built for{" "}
@@ -58,7 +58,7 @@ export default function AboutPage() {
             who works with files
           </h1>
           <p className="text-lg md:text-xl text-[hsl(var(--muted-foreground))] max-w-2xl mx-auto leading-relaxed">
-            AllConverter is a free, browser-based toolbox that makes converting
+            FileNexa is a free, browser-based toolbox that makes converting
             and processing files effortless — with privacy and speed at its
             core.
           </p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <p className="text-[hsl(var(--muted-foreground))] text-base md:text-lg leading-relaxed mb-4">
             We believe that powerful file conversion tools should be accessible
             to everyone — not locked behind expensive subscriptions or cluttered
-            with ads. That's why we built AllConverter: a clean, fast, and
+            with ads. That's why we built FileNexa: a clean, fast, and
             completely free suite of tools that runs entirely in your browser.
           </p>
           <p className="text-[hsl(var(--muted-foreground))] text-base md:text-lg leading-relaxed">
@@ -119,13 +119,13 @@ export default function AboutPage() {
             Our Story
           </h2>
           <p className="text-[hsl(var(--muted-foreground))] text-base md:text-lg leading-relaxed mb-4">
-            AllConverter started as a personal side project — born out of
+            FileNexa started as a personal side project — born out of
             frustration with clunky, ad-heavy file conversion websites. We
             wanted something that just worked: snappy, honest, and respectful of
             the user's privacy.
           </p>
           <p className="text-[hsl(var(--muted-foreground))] text-base md:text-lg leading-relaxed">
-            Today, AllConverter supports a growing list of conversion and
+            Today, FileNexa supports a growing list of conversion and
             processing tools, all running client-side thanks to modern browser
             technologies. We're constantly adding new tools based on community
             feedback and our own day-to-day needs.

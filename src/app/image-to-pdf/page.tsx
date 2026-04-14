@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Is there a file size or page limit?",
-    a: "No. AllConverter imposes no artificial limits on file size or the number of images you can combine.",
+    a: "No. FileNexa imposes no artificial limits on file size or the number of images you can combine.",
   },
   {
     q: "Are my images uploaded to a server?",
@@ -89,7 +89,7 @@ export default function ImageToPdfPage() {
           Image to PDF conversion lets you bundle one or more raster images (JPG, PNG, WebP, etc.) into a single, shareable PDF document. PDFs are universally supported, maintain their layout across all devices, and are the preferred format for sending documents professionally.
         </p>
         <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-          AllConverter does this entirely <strong className="text-[hsl(var(--foreground))]">inside your browser</strong> — no file is ever uploaded to a server, so your images stay 100% private.
+          FileNexa does this entirely <strong className="text-[hsl(var(--foreground))]">inside your browser</strong> — no file is ever uploaded to a server, so your images stay 100% private.
         </p>
       </div>
 
@@ -126,7 +126,7 @@ export default function ImageToPdfPage() {
           {[
             { title: "Multiple images", desc: "Select multiple images at once — they'll be combined into one PDF in the order you add them." },
             { title: "No quality loss", desc: "Your images are embedded at their original resolution inside the PDF." },
-            { title: "No file size limits", desc: "Unlike most online tools, AllConverter imposes no artificial file size cap." },
+            { title: "No file size limits", desc: "Unlike most online tools, FileNexa imposes no artificial file size cap." },
             { title: "Completely private", desc: "Everything runs locally — no data ever leaves your device." },
           ].map((tip) => (
             <li key={tip.title} className="text-sm text-[hsl(var(--muted-foreground))]">

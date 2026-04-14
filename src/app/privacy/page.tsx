@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy – AllConverter",
+  title: "Privacy Policy – FileNexa",
   description:
-    "Read the AllConverter Privacy Policy to understand how we handle your data — spoiler: we don't collect any.",
+    "Read the FileNexa Privacy Policy to understand how we handle your data — spoiler: we don't collect any.",
 };
 
 export default function PrivacyPage() {
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
                 1. Introduction
               </h2>
               <p>
-                Welcome to <strong className="text-[hsl(var(--foreground))]">AllConverter</strong>.
+                Welcome to <strong className="text-[hsl(var(--foreground))]">FileNexa</strong>.
                 We respect your privacy and are committed to protecting it. This
                 Privacy Policy explains how we collect, use, and safeguard
                 information when you use our website and tools.
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
                 2. Information We Do NOT Collect
               </h2>
               <p>
-                AllConverter processes all files <strong className="text-[hsl(var(--foreground))]">
+                FileNexa processes all files <strong className="text-[hsl(var(--foreground))]">
                 locally in your browser
                 </strong>. This means:
               </p>
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                 5. Third-Party Services
               </h2>
               <p>
-                AllConverter may link to third-party websites. We are not
+                FileNexa may link to third-party websites. We are not
                 responsible for the privacy practices of those sites. We
                 encourage you to review their privacy policies independently.
               </p>
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
               <p>
                 We may update this Privacy Policy from time to time. Any changes
                 will be reflected on this page with an updated "Last updated"
-                date. Continued use of AllConverter after changes constitutes
+                date. Continued use of FileNexa after changes constitutes
                 your acceptance of the revised policy.
               </p>
             </div>

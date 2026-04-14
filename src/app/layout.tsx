@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "All-in-One File Converter - Fast, Secure & Free",
+  title: "FileNexa - Fast, Secure & Free",
   description: "Convert images and documents online with ease. Enjoy lightning fast, private, and high-quality conversions entirely in your browser. Supports PDF, JPG, PNG, and more.",
   keywords: "file converter, image to pdf, png to jpg, jpg to png, doc to pdf, free file conversion, secure converter",
   openGraph: {
-    title: "All-in-One File Converter",
+    title: "FileNexa",
     description: "Lightning fast, secure, and fully private file conversions.",
     type: "website",
   }
