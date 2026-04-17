@@ -1,5 +1,5 @@
 import { ToolCard } from "@/components/ToolCard";
-import { FileImage, FileText, Image as ImageIcon, ArrowRightLeft, Sparkles } from "lucide-react";
+import { FileImage, FileText, Image as ImageIcon, ArrowRightLeft, Sparkles, Sliders, Type, Copy, PlusSquare } from "lucide-react";
 import { AdBanner } from "@/components/AdBanner";
 
 export default function Home() {
@@ -22,18 +22,54 @@ export default function Home() {
       description: "Quickly convert your JPG pictures to PNG format for transparency and better quality.",
       icon: <ImageIcon className="w-8 h-8" />,
     },
-    // {
-    //   href: "/doc-to-pdf",
-    //   title: "DOC to PDF",
-    //   description: "Easily convert Microsoft Word documents (DOC/DOCX) to universally compatible PDF files.",
-    //   icon: <FileText className="w-8 h-8" />,
-    // },
-    // {
-    //   href: "/background-remover",
-    //   title: "Background Remover",
-    //   description: "Automatically remove image backgrounds with high precision AI right in your browser.",
-    //   icon: <ImageIcon className="w-8 h-8" />,
-    // },
+    {
+      href: "/jfif-to-png",
+      title: "JFIF to PNG",
+      description: "Instantly convert JFIF files to standard PNG format for better compatibility.",
+      icon: <ImageIcon className="w-8 h-8" />,
+    },
+    {
+      href: "/png-to-jfif",
+      title: "PNG to JFIF",
+      description: "Quickly convert PNG files to JFIF image sequences for specific application requirements.",
+      icon: <ArrowRightLeft className="w-8 h-8" />,
+    },
+    {
+      href: "/jfif-to-jpeg",
+      title: "JFIF to JPEG",
+      description: "Turn less-common JFIF files into universally accepted JPEG formats.",
+      icon: <ArrowRightLeft className="w-8 h-8" />,
+    },
+    {
+      href: "/jpeg-to-jfif",
+      title: "JPEG to JFIF",
+      description: "Convert standard JPEGs to JFIFs instantly in your browser securely.",
+      icon: <ArrowRightLeft className="w-8 h-8" />,
+    },
+    {
+      href: "/merge-pdfs",
+      title: "Merge PDFs",
+      description: "Combine multiple PDF documents into a single PDF file securely in your browser.",
+      icon: <PlusSquare className="w-8 h-8" />,
+    },
+    {
+      href: "/add-watermark",
+      title: "Watermark Image",
+      description: "Protect your images by stamping them with custom text overlays.",
+      icon: <Copy className="w-8 h-8" />,
+    },
+    {
+      href: "/watermark-pdf",
+      title: "Watermark PDF",
+      description: "Securely embed diagonal text watermarks onto all pages of your PDF document.",
+      icon: <Type className="w-8 h-8" />,
+    },
+    {
+      href: "/compress-image",
+      title: "Compress Image",
+      description: "Reduce image file sizes for free online. Make JPG, PNG, or WebP smaller.",
+      icon: <Sliders className="w-8 h-8" />,
+    },
     {
       href: "/favicon-generator",
       title: "Favicon Generator",
