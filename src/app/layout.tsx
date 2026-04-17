@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { AdBanner } from "@/components/AdBanner";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +35,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5314962273762361"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-[hsl(var(--background))] text-[hsl(var(--foreground))]`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
+          <AdBanner className="mt-4" />
           <main className="flex-grow flex flex-col">
             {children}
           </main>

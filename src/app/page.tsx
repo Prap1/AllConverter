@@ -1,5 +1,6 @@
 import { ToolCard } from "@/components/ToolCard";
 import { FileImage, FileText, Image as ImageIcon, ArrowRightLeft, Sparkles } from "lucide-react";
+import { AdBanner } from "@/components/AdBanner";
 
 export default function Home() {
   const tools = [
@@ -61,11 +62,13 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
           {tools.map((tool) => (
             <ToolCard key={tool.title} {...tool} />
           ))}
         </div>
+
+        <AdBanner />
       </div>
     </div>
   );

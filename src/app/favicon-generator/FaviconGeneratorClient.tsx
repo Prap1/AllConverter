@@ -2,8 +2,10 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { FileUploader } from "@/components/FileUploader";
-import { Download, Archive, RefreshCw, Settings2, Image as ImageIcon } from "lucide-react";
+import { Download, Archive, RefreshCw, Settings2, Image as ImageIcon, Loader2 } from "lucide-react";
 import JSZip from "jszip";
+import { useConversionAd } from "@/hooks/useConversionAd";
+import { InterstitialAdModal } from "@/components/InterstitialAdModal";
 
 const SIZES = [16, 32, 48, 64, 128];
 const EXTRA_SIZES = [
@@ -26,6 +28,8 @@ export default function FaviconGeneratorClient() {
   // Results
   const [canvases, setCanvases] = useState<{size: number, canvas: HTMLCanvasElement}[]>([]);
   const [dataUrls, setDataUrls] = useState<Record<number, string>>({});
+  
+  const { handleConvertAction, isProcessingAd, showAdModal, handleAdFinished, handleCloseModal } = useConversionAd();
   
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -342,16 +346,18 @@ export default function FaviconGeneratorClient() {
             
             <div className="pt-4 border-t space-y-3">
                <button
-                 onClick={downloadIco}
-                 className="w-full px-6 py-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-sm"
+                 onClick={() => handleConvertAction(downloadIco)}
+                 disabled={isProcessingAd}
+                 className="w-full px-6 py-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                >
-                 <Download className="w-5 h-5" /> Download .ico
+                 {isProcessingAd ? <Loader2 className="w-5 h-5 animate-spin" /> : <Download className="w-5 h-5" />} Download .ico
                </button>
                <button
-                 onClick={downloadZip}
-                 className="w-full px-6 py-3 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] border border-[hsl(var(--border))] font-semibold rounded-lg hover:bg-[hsl(var(--secondary))]/70 transition-opacity flex items-center justify-center gap-2 shadow-sm"
+                 onClick={() => handleConvertAction(downloadZip)}
+                 disabled={isProcessingAd}
+                 className="w-full px-6 py-3 bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))] border border-[hsl(var(--border))] font-semibold rounded-lg hover:bg-[hsl(var(--secondary))]/70 transition-opacity flex items-center justify-center gap-2 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
                >
-                 <Archive className="w-5 h-5" /> Download All (.zip)
+                 {isProcessingAd ? <Loader2 className="w-5 h-5 animate-spin" /> : <Archive className="w-5 h-5" />} Download All (.zip)
                </button>
             </div>
           </div>
@@ -414,6 +420,12 @@ export default function FaviconGeneratorClient() {
           </div>
         </div>
       )}
+
+      <InterstitialAdModal 
+        isOpen={showAdModal} 
+        onAdFinished={handleAdFinished} 
+        onClose={handleCloseModal} 
+      />
     </div>
   );
 }

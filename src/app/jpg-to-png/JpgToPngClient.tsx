@@ -3,11 +3,15 @@
 import { useState } from "react";
 import { FileUploader } from "@/components/FileUploader";
 import { Loader2, Download, AlertCircle } from "lucide-react";
+import { useConversionAd } from "@/hooks/useConversionAd";
+import { InterstitialAdModal } from "@/components/InterstitialAdModal";
 
 export default function JpgToPngClient() {
   const [files, setFiles] = useState<File[]>([]);
   const [isConverting, setIsConverting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const { handleConvertAction, isProcessingAd, showAdModal, handleAdFinished, handleCloseModal } = useConversionAd();
 
   const handleFilesSelected = (selected: File[]) => {
     setFiles(selected);
@@ -82,11 +86,11 @@ export default function JpgToPngClient() {
 
       {files.length > 0 && (
         <button
-          onClick={convertToPng}
-          disabled={isConverting}
+          onClick={() => handleConvertAction(convertToPng)}
+          disabled={isConverting || isProcessingAd}
           className="w-full max-w-2xl text-lg font-semibold py-4 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] rounded-xl hover:bg-[hsl(var(--primary))]/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
         >
-          {isConverting ? (
+          {isConverting || isProcessingAd ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
               Processing...
@@ -99,6 +103,12 @@ export default function JpgToPngClient() {
           )}
         </button>
       )}
+
+      <InterstitialAdModal 
+        isOpen={showAdModal} 
+        onAdFinished={handleAdFinished} 
+        onClose={handleCloseModal} 
+      />
     </div>
   );
 }

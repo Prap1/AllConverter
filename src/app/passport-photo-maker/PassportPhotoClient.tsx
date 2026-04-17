@@ -2,8 +2,10 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { FileUploader } from "@/components/FileUploader";
-import { Download, LayoutGrid, Image as ImageIcon, FileText, Settings2, RefreshCw } from "lucide-react";
+import { Download, LayoutGrid, Image as ImageIcon, FileText, Settings2, RefreshCw, Loader2 } from "lucide-react";
 import jsPDF from "jspdf";
+import { useConversionAd } from "@/hooks/useConversionAd";
+import { InterstitialAdModal } from "@/components/InterstitialAdModal";
 
 const PRESETS = [
   { id: "2x2in", label: "2x2 inch (US)", wPx: 600, hPx: 600, wMm: 51, hMm: 51 },
@@ -22,6 +24,8 @@ export default function PassportPhotoClient() {
   const [offsetX, setOffsetX] = useState<number>(0);
   const [bgColor, setBgColor] = useState<string>("#ffffff");
   const [copies, setCopies] = useState<number>(6);
+  
+  const { handleConvertAction, isProcessingAd, showAdModal, handleAdFinished, handleCloseModal } = useConversionAd();
   
   // Custom size state in arbitrary px, representing 300DPI sizing roughly
   const [customW, setCustomW] = useState(600);
@@ -347,26 +351,29 @@ export default function PassportPhotoClient() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                <button
-                 onClick={handleDownloadSingle}
-                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-[hsl(var(--border))] hover:bg-[hsl(var(--primary))]/10 hover:border-[hsl(var(--primary))]/50 transition-colors gap-2"
+                 onClick={() => handleConvertAction(handleDownloadSingle)}
+                 disabled={isProcessingAd}
+                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-[hsl(var(--border))] hover:bg-[hsl(var(--primary))]/10 hover:border-[hsl(var(--primary))]/50 transition-colors gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                >
-                 <ImageIcon className="w-6 h-6 text-[hsl(var(--primary))]" />
+                 {isProcessingAd ? <Loader2 className="w-6 h-6 animate-spin text-[hsl(var(--primary))]" /> : <ImageIcon className="w-6 h-6 text-[hsl(var(--primary))]" />}
                  <span className="font-semibold text-sm">Download Single (JPG)</span>
                </button>
                
                <button
-                 onClick={handleDownloadSheetImage}
-                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-[hsl(var(--border))] hover:bg-[hsl(var(--primary))]/10 hover:border-[hsl(var(--primary))]/50 transition-colors gap-2"
+                 onClick={() => handleConvertAction(handleDownloadSheetImage)}
+                 disabled={isProcessingAd}
+                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-[hsl(var(--border))] hover:bg-[hsl(var(--primary))]/10 hover:border-[hsl(var(--primary))]/50 transition-colors gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                >
-                 <LayoutGrid className="w-6 h-6 text-[hsl(var(--primary))]" />
+                 {isProcessingAd ? <Loader2 className="w-6 h-6 animate-spin text-[hsl(var(--primary))]" /> : <LayoutGrid className="w-6 h-6 text-[hsl(var(--primary))]" />}
                  <span className="font-semibold text-sm">Sheet of {copies} (JPG)</span>
                </button>
                
                <button
-                 onClick={handleDownloadPDF}
-                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-transparent bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:opacity-90 shadow-md transition-opacity gap-2"
+                 onClick={() => handleConvertAction(handleDownloadPDF)}
+                 disabled={isProcessingAd}
+                 className="flex flex-col items-center justify-center p-4 rounded-xl border border-transparent bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:opacity-90 shadow-md transition-opacity gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                >
-                 <FileText className="w-6 h-6" />
+                 {isProcessingAd ? <Loader2 className="w-6 h-6 animate-spin" /> : <FileText className="w-6 h-6" />}
                  <span className="font-semibold text-sm">Download Print PDF</span>
                </button>
             </div>
@@ -374,6 +381,12 @@ export default function PassportPhotoClient() {
 
         </div>
       )}
+
+      <InterstitialAdModal 
+        isOpen={showAdModal} 
+        onAdFinished={handleAdFinished} 
+        onClose={handleCloseModal} 
+      />
     </div>
   );
 }
