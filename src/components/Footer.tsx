@@ -5,12 +5,12 @@ import { Globe, Mail, Link as LinkIcon } from "lucide-react";
 export function Footer() {
   return (
     <footer className="w-full border-t bg-[hsl(var(--background))] py-8 md:py-12 mt-auto">
-      <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
         {/* Brand */}
-        <div className="sm:col-span-2 md:col-span-1">
+        <div className="sm:col-span-2 lg:col-span-2">
           <Link href="/" className="flex items-center gap-2 mb-4 hover:opacity-85 transition-opacity w-fit">
             <div className="relative h-10 w-10 overflow-hidden rounded-md">
-              <Image src="/logo.png" alt="FileNexa logo" fill className="object-cover" />
+              <Image src="/logo.png" alt="FileNexa logo" fill sizes="40px" className="object-cover" />
             </div>
             <span className="font-bold tracking-tight text-xl text-[hsl(var(--foreground))]">
               FileNexa
@@ -23,15 +23,22 @@ export function Footer() {
         </div>
 
         {/* Tools */}
-        <div>
+        <div className="sm:col-span-2 lg:col-span-2">
           <h3 className="font-semibold text-[hsl(var(--foreground))] mb-4">Tools</h3>
-          <ul className="flex flex-col gap-2 text-sm text-[hsl(var(--muted-foreground))]">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm text-[hsl(var(--muted-foreground))]">
             <li><Link href="/image-to-pdf" className="hover:text-[hsl(var(--primary))] transition-colors">Image to PDF</Link></li>
             <li><Link href="/png-to-jpg" className="hover:text-[hsl(var(--primary))] transition-colors">PNG to JPG</Link></li>
             <li><Link href="/jpg-to-png" className="hover:text-[hsl(var(--primary))] transition-colors">JPG to PNG</Link></li>
+            <li><Link href="/jfif-to-jpeg" className="hover:text-[hsl(var(--primary))] transition-colors">JFIF to JPEG</Link></li>
+            <li><Link href="/jfif-to-png" className="hover:text-[hsl(var(--primary))] transition-colors">JFIF to PNG</Link></li>
+            <li><Link href="/jpeg-to-jfif" className="hover:text-[hsl(var(--primary))] transition-colors">JPEG to JFIF</Link></li>
+            <li><Link href="/png-to-jfif" className="hover:text-[hsl(var(--primary))] transition-colors">PNG to JFIF</Link></li>
+            <li><Link href="/compress-image" className="hover:text-[hsl(var(--primary))] transition-colors">Compress Image</Link></li>
+            <li><Link href="/add-watermark" className="hover:text-[hsl(var(--primary))] transition-colors">Watermark Image</Link></li>
+            <li><Link href="/watermark-pdf" className="hover:text-[hsl(var(--primary))] transition-colors">Watermark PDF</Link></li>
+            <li><Link href="/merge-pdfs" className="hover:text-[hsl(var(--primary))] transition-colors">Merge PDFs</Link></li>
             <li><Link href="/passport-photo-maker" className="hover:text-[hsl(var(--primary))] transition-colors">Passport Photo</Link></li>
             <li><Link href="/favicon-generator" className="hover:text-[hsl(var(--primary))] transition-colors">Favicon Generator</Link></li>
-            {/* <li><Link href="/doc-to-pdf" className="hover:text-[hsl(var(--primary))] transition-colors">DOC to PDF</Link></li> */}
           </ul>
         </div>
 

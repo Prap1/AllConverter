@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Moon, Sun, Menu } from "lucide-react";
+import { Moon, Sun, Menu, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -22,8 +22,14 @@ export function Navbar() {
     { href: "/image-to-pdf", label: "Image to PDF" },
     { href: "/png-to-jpg", label: "PNG to JPG" },
     { href: "/jpg-to-png", label: "JPG to PNG" },
-    // { href: "/doc-to-pdf", label: "DOC to PDF" },
-    // { href: "/background-remover", label: "Remove Background" },
+    { href: "/jfif-to-jpeg", label: "JFIF to JPEG" },
+    { href: "/jfif-to-png", label: "JFIF to PNG" },
+    { href: "/jpeg-to-jfif", label: "JPEG to JFIF" },
+    { href: "/png-to-jfif", label: "PNG to JFIF" },
+    { href: "/compress-image", label: "Compress Image" },
+    { href: "/add-watermark", label: "Watermark Image" },
+    { href: "/watermark-pdf", label: "Watermark PDF" },
+    { href: "/merge-pdfs", label: "Merge PDFs" },
     { href: "/passport-photo-maker", label: "Passport Photo" },
     { href: "/favicon-generator", label: "Favicon Maker" },
   ];
@@ -34,27 +40,59 @@ export function Navbar() {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2 hover:opacity-85 transition-opacity">
             <div className="relative h-10 w-10 overflow-hidden rounded-md">
-              <Image src="/logo.png" alt="FileNexa logo" fill className="object-cover" />
+              <Image src="/logo.png" alt="FileNexa logo" fill sizes="40px" className="object-cover" />
             </div>
             <span className="font-bold text-xl tracking-tight text-[hsl(var(--foreground))]">
               FileNexa
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-1">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                  pathname === link.href
-                    ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
-                    : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50"
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="relative group">
+              <button className="px-3 py-2 text-sm font-medium rounded-md text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50 transition-colors flex items-center gap-1">
+                All Tools
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="bg-[hsl(var(--background))] border border-[hsl(var(--border))] rounded-xl shadow-xl w-[400px] p-3 grid grid-cols-2 gap-1">
+                  {links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={cn(
+                        "px-3 py-2 text-sm font-medium rounded-md transition-colors text-left",
+                        pathname === link.href
+                          ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+                          : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50"
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <Link
+              href="/about"
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                pathname === "/about"
+                  ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+                  : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50"
+              )}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                pathname === "/contact"
+                  ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+                  : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50"
+              )}
+            >
+              Contact
+            </Link>
           </div>
         </div>
 
