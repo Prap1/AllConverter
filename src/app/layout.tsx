@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     title: "FileNexa",
     description: "Lightning fast, secure, and fully private file conversions.",
     type: "website",
-  }
+  },
+  verification: {
+    google: "EuT9zaepGwE4qmiaKm7smPYaTOcT-5XkEIvmIUSgYhE",
+  },
 };
 
 export default function RootLayout({
