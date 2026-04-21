@@ -18,12 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FileNexa - Fast, Secure & Free",
-  description: "Convert images and documents online with ease. Enjoy lightning fast, private, and high-quality conversions entirely in your browser. Supports PDF, JPG, PNG, and more.",
-  keywords: "file converter, image to pdf, png to jpg, jpg to png, doc to pdf, free file conversion, secure converter",
+  title: "FileNexa: Free Online File Converter - Fast, Secure & Private",
+  description: "Use FileNexa, the ultimate free online file converter. Seamlessly convert, merge, compress, and edit images and PDFs securely in your browser. Fast, private, and no signup required.",
+  keywords: "free online file converter, image to pdf, png to jpg converter, jpg to png, secure file conversion, merge pdfs online, compress image online, watermark pdf, jfif to jpg, web converter",
   openGraph: {
-    title: "FileNexa",
-    description: "Lightning fast, secure, and fully private file conversions.",
+    title: "FileNexa: Free Online File Converter",
+    description: "Lightning fast, secure, and fully private file conversions. Convert, merge, and compress files directly in your browser.",
     type: "website",
   },
   verification: {
