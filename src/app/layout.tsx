@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { AdBanner } from "@/components/AdBanner";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -50,7 +49,6 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <AdBanner className="mt-4" />
           <main className="flex-grow flex flex-col">
             {children}
           </main>

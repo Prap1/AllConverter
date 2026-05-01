@@ -1,11 +1,40 @@
 import { Metadata } from "next";
 import WatermarkPdfClient from "./WatermarkPdfClient";
 import { FileText, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
+import { RelatedTools } from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Add Watermark to PDF | All-in-One Converter",
-  description: "Securely embed diagonal text watermarks onto all pages of your PDF document.",
+  title: "Watermark PDF Online – Free, Private, Browser-Based | FileNexa",
+  description:
+    "Add diagonal text watermarks to every page of your PDF for free. Mark documents as CONFIDENTIAL, DRAFT, or add your brand. All processing is private and browser-based.",
 };
+
+const faqs = [
+  {
+    q: "Is the watermark visible on printed documents?",
+    a: "Yes. The watermark is permanently embedded into the PDF as vector text and will appear when the document is printed. The text is semi-transparent so the underlying document remains readable.",
+  },
+  {
+    q: "Can I remove the watermark after applying it?",
+    a: "No. Once the watermark is applied and you download the PDF, it is flattened into the document and cannot easily be removed without specialised (and expensive) PDF editing software. Always keep your original un-watermarked PDF as a backup.",
+  },
+  {
+    q: "Are my sensitive documents uploaded online?",
+    a: "Absolutely not. FileNexa processes your PDF entirely locally using pdf-lib running via WebAssembly in your browser. No document data is ever sent to any server. Your files remain completely on your device.",
+  },
+  {
+    q: "Can I customize the watermark appearance — font, colour, size?",
+    a: "The current tool applies a standardized diagonal, semi-transparent grey watermark optimised for readability across all backgrounds. Custom styling options are planned for future updates.",
+  },
+  {
+    q: "Does it work on multi-page PDFs?",
+    a: "Yes. The watermark is applied to every single page of your PDF automatically, regardless of how many pages the document contains.",
+  },
+  {
+    q: "What text should I use for my watermark?",
+    a: "Common choices include CONFIDENTIAL, DRAFT, COPY, SAMPLE, APPROVED, or VOID for document management. For branding, your company name or website domain works well. Use short, clear text — long sentences wrap awkwardly when rotated diagonally.",
+  },
+];
 
 export default function WatermarkPdfPage() {
   return (
@@ -108,11 +137,7 @@ export default function WatermarkPdfPage() {
           <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">Frequently Asked Questions</h2>
         </div>
         <dl className="space-y-5 divide-y divide-[hsl(var(--border))]">
-          {[
-            { q: "Is the watermark visible on printed documents?", a: "Yes, the watermark becomes a permanent part of the PDF and will show up when printed." },
-            { q: "Can I remove the watermark later?", a: "No, once the watermark is applied and downloaded, it is flattened into the document and cannot easily be removed. Make sure to keep your original copy!" },
-            { q: "Are my sensitive documents uploaded online?", a: "No, FileNexa values your privacy. Your documents are processed completely locally and never leave your device." },
-          ].map((faq) => (
+          {faqs.map((faq) => (
             <div key={faq.q} className="pt-4 first:pt-0">
               <dt className="font-semibold text-[hsl(var(--foreground))] text-sm mb-1">{faq.q}</dt>
               <dd className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">{faq.a}</dd>
@@ -120,6 +145,14 @@ export default function WatermarkPdfPage() {
           ))}
         </dl>
       </div>
+
+      {/* Related Tools */}
+      <RelatedTools tools={[
+        { href: "/merge-pdfs", title: "Merge PDFs", description: "Combine multiple PDF files into a single document." },
+        { href: "/add-watermark", title: "Watermark Image", description: "Add text watermarks to JPG, PNG, and WebP images." },
+        { href: "/image-to-pdf", title: "Image to PDF", description: "Convert JPG/PNG images into a PDF document." },
+        { href: "/compress-image", title: "Compress Image", description: "Reduce image file sizes without losing quality." },
+      ]} />
     </div>
   );
 }

@@ -47,6 +47,7 @@ export function Footer() {
           <h3 className="font-semibold text-[hsl(var(--foreground))] mb-4">Company</h3>
           <ul className="flex flex-col gap-2 text-sm text-[hsl(var(--muted-foreground))]">
             <li><Link href="/about" className="hover:text-[hsl(var(--primary))] transition-colors">About Us</Link></li>
+            <li><Link href="/blog" className="hover:text-[hsl(var(--primary))] transition-colors">Blog & Guides</Link></li>
             <li><Link href="/contact" className="hover:text-[hsl(var(--primary))] transition-colors">Contact Us</Link></li>
             <li><Link href="/privacy" className="hover:text-[hsl(var(--primary))] transition-colors">Privacy Policy</Link></li>
             <li><Link href="/terms" className="hover:text-[hsl(var(--primary))] transition-colors">Terms &amp; Conditions</Link></li>
@@ -80,6 +81,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-8 mt-12 pt-8 border-t text-sm text-[hsl(var(--muted-foreground))] flex flex-col md:flex-row justify-between items-center gap-4">
         <p>&copy; {new Date().getFullYear()} FileNexa. All rights reserved.</p>
         <div className="flex flex-wrap gap-4 justify-center">
+          <Link href="/blog" className="hover:underline">Blog</Link>
           <Link href="/about" className="hover:underline">About Us</Link>
           <Link href="/contact" className="hover:underline">Contact Us</Link>
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>

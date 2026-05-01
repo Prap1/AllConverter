@@ -1,11 +1,40 @@
 import { Metadata } from "next";
 import PngToJfifClient from "./PngToJfifClient";
 import { ImageIcon, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
+import { RelatedTools } from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Convert PNG to JFIF | All-in-One Converter",
-  description: "Instantly convert PNG files to JFIF format for free online.",
+  title: "PNG to JFIF Converter – Free Online, No Upload Required | FileNexa",
+  description:
+    "Convert PNG to JFIF format free online. Transparent areas are filled with white automatically. Browser-based and private — your files never leave your device.",
 };
+
+const faqs = [
+  {
+    q: "What happens to transparent areas in my PNG when converting to JFIF?",
+    a: "JFIF (like all JPEG formats) does not support transparency. Any transparent or semi-transparent areas in your PNG will be automatically filled with a solid white background during conversion. If you need a different background colour, consider using an image editor to set the background before converting.",
+  },
+  {
+    q: "Will the JFIF file be smaller than my PNG?",
+    a: "In most cases, yes — significantly smaller. JFIF uses JPEG's lossy compression, which produces much smaller files than PNG's lossless compression. For a typical photo or graphic, the JFIF version may be 3–10× smaller than the original PNG.",
+  },
+  {
+    q: "Is there a quality loss when converting PNG to JFIF?",
+    a: "There is some quality reduction because JFIF uses lossy JPEG compression, whereas PNG is lossless. However, our converter uses a high quality setting that minimises visible artifacts. For photographs, the difference is typically imperceptible at normal viewing distances.",
+  },
+  {
+    q: "Why would I ever want a .jfif file instead of a .jpg?",
+    a: "Some applications — particularly on Windows or in embedded systems — specifically look for the .jfif extension. If you're encountering an error that your image must be in JFIF format, this converter fixes that instantly without any other software.",
+  },
+  {
+    q: "Are my files uploaded to a server?",
+    a: "No. All conversion runs locally inside your browser using the HTML5 Canvas API. Your images are processed entirely on your device and never sent anywhere.",
+  },
+  {
+    q: "Can I convert multiple PNGs at once?",
+    a: "Yes. Select multiple PNG files and they will each be converted and made available for download individually. There are no limits on the number of conversions.",
+  },
+];
 
 export default function PngToJfifPage() {
   return (
@@ -15,7 +44,7 @@ export default function PngToJfifPage() {
           PNG to <span className="text-[hsl(var(--primary))]">JFIF</span>
         </h1>
         <p className="text-lg text-[hsl(var(--muted-foreground))]">
-          Convert your PNG pictures to JFIF online for free.
+          Convert PNG images to JFIF format instantly — free, private, and completely browser-based.
         </p>
       </div>
 
@@ -23,13 +52,20 @@ export default function PngToJfifPage() {
         <PngToJfifClient />
       </div>
 
-      <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-5">
+      {/* About */}
+      <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-4">
         <div className="flex items-center gap-2">
           <ImageIcon className="w-5 h-5 text-[hsl(var(--primary))]" />
-          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">About this tool</h2>
+          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">About PNG to JFIF Conversion</h2>
         </div>
         <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-          Convert your PNGs into the JFIF format rapidly and with high quality. Note that any transparent areas will automatically be filled with a solid white background in the resulting JFIF file. All conversion takes place securely in your browsers.
+          PNG is a lossless image format that supports transparency and is widely used for logos, icons, and graphics. JFIF is the formal name for the JPEG file interchange format — essentially a JPEG image with the .jfif extension. Converting from PNG to JFIF is useful when a system, application, or upload form specifically requires the .jfif extension.
+        </p>
+        <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
+          The key difference to understand is that JFIF uses <strong className="text-[hsl(var(--foreground))]">lossy JPEG compression</strong>, while PNG is lossless. This means the JFIF file will be significantly smaller than the PNG, but some very fine image details may be slightly affected. For photographic content and general imagery this is rarely noticeable; for graphics with sharp text or hard edges at very small sizes it may be more visible.
+        </p>
+        <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
+          Importantly, any transparent areas in your PNG will be filled with a white background in the resulting JFIF file, since JPEG does not support the alpha channel. The entire conversion runs <strong className="text-[hsl(var(--foreground))]">locally in your browser</strong> — nothing is uploaded.
         </p>
       </div>
 
@@ -37,13 +73,14 @@ export default function PngToJfifPage() {
       <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-5">
         <div className="flex items-center gap-2">
           <ListOrdered className="w-5 h-5 text-[hsl(var(--primary))]" />
-          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">How it Works</h2>
+          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">How It Works</h2>
         </div>
         <ol className="space-y-4">
           {[
-            { step: "1", title: "Upload PNG", desc: "Select or drag & drop your .png file into the converter." },
-            { step: "2", title: "Automatic Processing", desc: "The tool automatically processes and converts the file to JFIF format." },
-            { step: "3", title: "Download", desc: "Click the download button to save your new .jfif file." },
+            { step: "1", title: "Upload your PNG file", desc: "Select or drag & drop your .png file(s). Multiple files are supported." },
+            { step: "2", title: "Transparency is handled", desc: "Any transparent areas are filled with a solid white background, since JFIF does not support the alpha channel." },
+            { step: "3", title: "Encoded as JFIF/JPEG", desc: "The image is encoded using JPEG compression and saved with the .jfif extension." },
+            { step: "4", title: "Download your JFIF", desc: "Save the converted file to your device. The result is a fully compatible .jfif image." },
           ].map((s) => (
             <li key={s.step} className="flex items-start gap-4">
               <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[hsl(var(--primary))]/10 text-[hsl(var(--primary))] font-bold text-sm flex items-center justify-center">
@@ -66,11 +103,12 @@ export default function PngToJfifPage() {
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
-            "Converting web assets to standard image formats",
-            "Reducing file sizes of high-resolution PNGs",
-            "Removing alpha transparency for printing",
-            "Preparing files for specific legacy applications",
-            "Standardizing a batch of images",
+            "Uploading to platforms that specifically require JFIF format",
+            "Reducing file sizes of large, high-resolution PNGs",
+            "Removing alpha transparency for print or display",
+            "Preparing files for legacy or embedded imaging applications",
+            "Batch standardizing a folder of mixed image formats",
+            "Resolving upload errors caused by extension requirements",
           ].map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm text-[hsl(var(--muted-foreground))]">
               <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[hsl(var(--primary))] flex-shrink-0" />
@@ -80,7 +118,7 @@ export default function PngToJfifPage() {
         </ul>
       </div>
 
-      {/* Tips & Value-Added Info */}
+      {/* Tips */}
       <div className="bg-[hsl(var(--primary))]/5 border border-[hsl(var(--primary))]/20 rounded-2xl p-6 md:p-8 space-y-3">
         <div className="flex items-center gap-2">
           <Lightbulb className="w-5 h-5 text-[hsl(var(--primary))]" />
@@ -88,9 +126,10 @@ export default function PngToJfifPage() {
         </div>
         <ul className="space-y-2">
           {[
-            { title: "Transparency handled", desc: "Transparent sections of your PNG will become white to ensure a clean JFIF image." },
-            { title: "Smaller file sizes", desc: "Converting to JFIF typically results in a smaller file size compared to the original PNG." },
-            { title: "Browser execution", desc: "We convert the file directly on your device, ensuring maximum privacy." },
+            { title: "Transparency becomes white", desc: "Transparent sections of your PNG will become a solid white background. Set your background colour before converting if you need a different colour." },
+            { title: "Smaller file sizes", desc: "JFIF files are typically 3–10× smaller than equivalent PNGs, which can save significant storage and bandwidth." },
+            { title: "Browser-based & private", desc: "We convert directly in your browser using the Canvas API. No file data is ever sent to a server." },
+            { title: "Good for photos", desc: "For photographic PNG images, the JFIF output quality is very high and the size reduction is dramatic." },
           ].map((tip) => (
             <li key={tip.title} className="text-sm text-[hsl(var(--muted-foreground))]">
               <span className="font-semibold text-[hsl(var(--foreground))]">{tip.title}:</span>{" "}{tip.desc}
@@ -99,18 +138,14 @@ export default function PngToJfifPage() {
         </ul>
       </div>
 
-      {/* Frequently Asked Questions */}
+      {/* FAQ */}
       <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-5">
         <div className="flex items-center gap-2">
           <HelpCircle className="w-5 h-5 text-[hsl(var(--primary))]" />
           <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">Frequently Asked Questions</h2>
         </div>
         <dl className="space-y-5 divide-y divide-[hsl(var(--border))]">
-          {[
-            { q: "What happens to transparent areas in my PNG?", a: "JFIF (JPEG) doesn't support transparency, so any transparent areas will be filled with a solid white background." },
-            { q: "Are my files uploaded to your server?", a: "No, all file conversions happen directly within your browser. Your files are never uploaded to any server." },
-            { q: "Is this tool free?", a: "Yes, our PNG to JFIF converter is completely free to use." },
-          ].map((faq) => (
+          {faqs.map((faq) => (
             <div key={faq.q} className="pt-4 first:pt-0">
               <dt className="font-semibold text-[hsl(var(--foreground))] text-sm mb-1">{faq.q}</dt>
               <dd className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">{faq.a}</dd>
@@ -118,6 +153,14 @@ export default function PngToJfifPage() {
           ))}
         </dl>
       </div>
+
+      {/* Related Tools */}
+      <RelatedTools tools={[
+        { href: "/jfif-to-png", title: "JFIF to PNG", description: "Convert JFIF files back to PNG format." },
+        { href: "/png-to-jpg", title: "PNG to JPG", description: "Convert PNG files to the smaller JPG format." },
+        { href: "/jpeg-to-jfif", title: "JPEG to JFIF", description: "Convert JPEG files to JFIF format." },
+        { href: "/compress-image", title: "Compress Image", description: "Reduce image file sizes with quality control." },
+      ]} />
     </div>
   );
 }

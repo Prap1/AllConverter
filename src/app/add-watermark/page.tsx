@@ -1,11 +1,40 @@
 import { Metadata } from "next";
 import AddWatermarkClient from "./AddWatermarkClient";
 import { Copy, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
+import { RelatedTools } from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Add Watermark to Image | All-in-One Converter",
-  description: "Securely add text watermarks to your pictures.",
+  title: "Add Watermark to Image – Free Online, No Upload Required | FileNexa",
+  description:
+    "Protect your images with custom text watermarks for free online. Add copyright notices, branding, or confidentiality marks. Browser-based — images never leave your device.",
 };
+
+const faqs = [
+  {
+    q: "Are my images uploaded to your servers?",
+    a: "No. All watermarking happens entirely in your browser using the HTML5 Canvas API. We never see, store, or transmit your images. Your files stay on your device throughout the entire process.",
+  },
+  {
+    q: "Can I choose where the watermark is placed?",
+    a: "Currently, watermarks are automatically placed in the bottom-right corner, which is the most standard and visually appealing position for copyright and branding watermarks.",
+  },
+  {
+    q: "What image formats are supported?",
+    a: "You can watermark JPG, JPEG, PNG, and WebP images. The watermarked output is saved as a PNG file to ensure the text overlay is rendered with perfect quality.",
+  },
+  {
+    q: "Can I watermark multiple images at once?",
+    a: "Yes. You can upload multiple images and apply the same watermark text to each one. Each watermarked image is available for individual download.",
+  },
+  {
+    q: "Will the watermark affect the original image quality?",
+    a: "The original image quality is fully preserved. The watermark text is rendered on top of the image data without altering the underlying pixels — only the watermark layer is added.",
+  },
+  {
+    q: "What is the best watermark text to use?",
+    a: "For copyright protection, use your name or © YourName YEAR. For branding, use your website domain or company name. For document marking, use CONFIDENTIAL, DRAFT, or SAMPLE — whatever best communicates the status of the image.",
+  },
+];
 
 export default function AddWatermarkPage() {
   return (
@@ -109,11 +138,7 @@ export default function AddWatermarkPage() {
           <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">Frequently Asked Questions</h2>
         </div>
         <dl className="space-y-5 divide-y divide-[hsl(var(--border))]">
-          {[
-            { q: "Are my images uploaded to your servers?", a: "No, all watermarking happens entirely in your browser. We never see or store your images." },
-            { q: "Can I choose where the watermark is placed?", a: "Currently, watermarks are automatically placed in the bottom-right corner for optimal visibility and aesthetic." },
-            { q: "Is this tool free to use?", a: "Yes, our watermark tool is 100% free with no hidden charges." },
-          ].map((faq) => (
+          {faqs.map((faq) => (
             <div key={faq.q} className="pt-4 first:pt-0">
               <dt className="font-semibold text-[hsl(var(--foreground))] text-sm mb-1">{faq.q}</dt>
               <dd className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">{faq.a}</dd>
@@ -121,6 +146,14 @@ export default function AddWatermarkPage() {
           ))}
         </dl>
       </div>
+
+      {/* Related Tools */}
+      <RelatedTools tools={[
+        { href: "/watermark-pdf", title: "Watermark PDF", description: "Add diagonal text watermarks to all pages of a PDF." },
+        { href: "/compress-image", title: "Compress Image", description: "Reduce image file sizes without losing quality." },
+        { href: "/png-to-jpg", title: "PNG to JPG", description: "Convert PNG images to smaller JPG format." },
+        { href: "/image-to-pdf", title: "Image to PDF", description: "Convert JPG/PNG images into a PDF document." },
+      ]} />
     </div>
   );
 }

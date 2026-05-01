@@ -93,6 +93,17 @@ export function Navbar() {
             >
               Contact
             </Link>
+            <Link
+              href="/blog"
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                pathname === "/blog" || pathname.startsWith("/blog/")
+                  ? "bg-[hsl(var(--secondary))] text-[hsl(var(--secondary-foreground))]"
+                  : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]/50"
+              )}
+            >
+              Blog
+            </Link>
           </div>
         </div>
 

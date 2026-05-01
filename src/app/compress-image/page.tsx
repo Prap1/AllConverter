@@ -1,11 +1,40 @@
 import { Metadata } from "next";
 import CompressImageClient from "./CompressImageClient";
 import { ImageIcon, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
+import { RelatedTools } from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Compress Image | All-in-One Converter",
-  description: "Reduce image file sizes for free online. Make your JPG or PNG files smaller without losing significant quality.",
+  title: "Compress Image Online – Reduce JPG, PNG & WebP File Size Free | FileNexa",
+  description:
+    "Compress JPG, PNG, and WebP images for free online. Reduce file sizes by up to 90% with adjustable quality. Browser-based — your images never leave your device.",
 };
+
+const faqs = [
+  {
+    q: "How much can I compress my image?",
+    a: "The reduction depends on the image content and the quality setting you choose. For photographs, you can typically achieve 50–80% size reduction at a quality setting of 75–85% with no visible quality loss. Images with lots of detail or fine patterns compress less efficiently.",
+  },
+  {
+    q: "Does compression reduce the image dimensions (width and height)?",
+    a: "No. Our image compressor only reduces the file size by optimizing the JPEG compression data. The actual pixel dimensions (width × height) of your image remain exactly the same.",
+  },
+  {
+    q: "What is the best quality setting for web images?",
+    a: "For most web use cases, a quality setting between 75% and 85% delivers the ideal balance of visual quality and file size. At 75%, images typically look indistinguishable from the original at normal screen sizes while being 4–6× smaller.",
+  },
+  {
+    q: "Which image formats does this tool support?",
+    a: "The compressor supports JPG/JPEG, PNG, and WebP formats. For PNG images, the output will be a high-quality JPEG file, which is typically much smaller than the original PNG.",
+  },
+  {
+    q: "Are my images uploaded to a server?",
+    a: "Never. All compression happens locally in your browser using the HTML5 Canvas API. Your images are never uploaded, stored, or processed by any external server, making it safe for personal and sensitive images.",
+  },
+  {
+    q: "Can I compress multiple images at once?",
+    a: "Yes. You can process multiple images by uploading them one at a time. Each compressed image is available for individual download immediately after processing.",
+  },
+];
 
 export default function CompressImagePage() {
   return (
@@ -15,7 +44,7 @@ export default function CompressImagePage() {
           Compress <span className="text-[hsl(var(--primary))]">Image</span>
         </h1>
         <p className="text-lg text-[hsl(var(--muted-foreground))]">
-          Reduce the file size of your images instantly in the browser.
+          Reduce JPG, PNG, and WebP file sizes instantly — no upload required, completely free.
         </p>
       </div>
 
@@ -23,13 +52,19 @@ export default function CompressImagePage() {
         <CompressImageClient />
       </div>
 
-      <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-5">
+      <div className="bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-2xl p-6 md:p-8 space-y-4">
         <div className="flex items-center gap-2">
           <ImageIcon className="w-5 h-5 text-[hsl(var(--primary))]" />
-          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">About this tool</h2>
+          <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">About Image Compression</h2>
         </div>
         <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
-          Easily compress JPG, PNG, and WebP images by adjusting the compression slider. Lower the quality slightly to drastically decrease the storage size required for the image, making it perfect for efficient web distribution and saving bandwidth!
+          Image compression reduces the file size of an image by encoding it more efficiently. Our tool uses <strong className="text-[hsl(var(--foreground))]">lossy JPEG compression</strong> — the same algorithm that powers billions of images on the web — with a user-controlled quality slider. By lowering the quality slightly (typically to 75–85%), you can achieve dramatic file size reductions that are imperceptible to the human eye.
+        </p>
+        <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
+          Images account for 50–80% of total page weight on most websites. Compressing images is the single most impactful optimization you can make for page load speed, which directly affects Google rankings through Core Web Vitals. Even for non-web use, smaller images mean faster email sending, less storage consumed, and quicker sharing.
+        </p>
+        <p className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">
+          All compression happens <strong className="text-[hsl(var(--foreground))]">directly in your browser</strong> using the HTML5 Canvas API. Your images are never uploaded to any server, making this tool completely safe for private and sensitive photos.
         </p>
       </div>
 
@@ -109,11 +144,7 @@ export default function CompressImagePage() {
           <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">Frequently Asked Questions</h2>
         </div>
         <dl className="space-y-5 divide-y divide-[hsl(var(--border))]">
-          {[
-            { q: "Does compression reduce image dimensions?", a: "No, this tool only reduces file size by optimizing the data, not by shrinking the actual width and height of the image." },
-            { q: "Is my privacy protected?", a: "Absolutely. All processing is done locally in your browser, meaning we don't store or see your images." },
-            { q: "Which formats are supported?", a: "We support standard formats like JPG, PNG, and WebP for compression." },
-          ].map((faq) => (
+          {faqs.map((faq) => (
             <div key={faq.q} className="pt-4 first:pt-0">
               <dt className="font-semibold text-[hsl(var(--foreground))] text-sm mb-1">{faq.q}</dt>
               <dd className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">{faq.a}</dd>
@@ -121,6 +152,15 @@ export default function CompressImagePage() {
           ))}
         </dl>
       </div>
+
+      {/* Related Tools */}
+      <RelatedTools tools={[
+        { href: "/png-to-jpg", title: "PNG to JPG", description: "Convert lossless PNG to smaller JPG format." },
+        { href: "/jpg-to-png", title: "JPG to PNG", description: "Convert JPG to lossless PNG for editing." },
+        { href: "/image-to-pdf", title: "Image to PDF", description: "Bundle multiple images into a single PDF." },
+        { href: "/add-watermark", title: "Watermark Image", description: "Protect your images with a custom text watermark." },
+      ]} />
     </div>
   );
 }
+

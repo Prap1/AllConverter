@@ -1,11 +1,40 @@
 import { Metadata } from "next";
 import MergePdfsClient from "./MergePdfsClient";
 import { FileText, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
+import { RelatedTools } from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Merge PDFs | All-in-One Converter",
-  description: "Combine multiple PDF documents into a single PDF file securely in your browser.",
+  title: "Merge PDFs Online – Free, Private, No Upload Required | FileNexa",
+  description:
+    "Combine multiple PDF files into one document for free. All merging runs in your browser — your PDFs never leave your device. No account or software needed.",
 };
+
+const faqs = [
+  {
+    q: "Is there a limit to how many PDFs I can merge?",
+    a: "There is no artificial limit. You can merge as many PDFs as your device's available memory allows. Most modern browsers can comfortably handle dozens of PDFs totalling hundreds of megabytes.",
+  },
+  {
+    q: "Will the formatting and quality of my PDFs be preserved?",
+    a: "Yes. Our tool combines PDFs at the file level using pdf-lib running in WebAssembly. All pages are merged exactly as they appear in the original files — fonts, images, layouts, and annotations are all preserved perfectly.",
+  },
+  {
+    q: "Are my confidential documents secure?",
+    a: "Absolutely. The entire merge process happens offline within your browser using WebAssembly technology. No files are ever uploaded to our servers or any external service. Your documents stay on your device at all times.",
+  },
+  {
+    q: "Does the order of files matter when merging?",
+    a: "Yes. The files are merged in the exact order you select them. Select your PDFs in the sequence you want them to appear in the final merged document.",
+  },
+  {
+    q: "Can I merge password-protected PDFs?",
+    a: "No — password-protected PDFs cannot be merged directly. You will need to remove the password protection first using your PDF viewer or an appropriate tool, and then use this merger.",
+  },
+  {
+    q: "What browser works best for merging large PDFs?",
+    a: "Chrome and Edge generally handle large PDFs best due to their V8 JavaScript engine and WebAssembly optimisations. Firefox also works well. If you're merging very large files (100 MB+), make sure your browser has sufficient memory available.",
+  },
+];
 
 export default function MergePdfsPage() {
   return (
@@ -109,11 +138,7 @@ export default function MergePdfsPage() {
           <h2 className="text-xl font-bold text-[hsl(var(--foreground))]">Frequently Asked Questions</h2>
         </div>
         <dl className="space-y-5 divide-y divide-[hsl(var(--border))]">
-          {[
-            { q: "Is there a limit to how many PDFs I can merge?", a: "There is no artificial limit, you are only restricted by your computer's available memory." },
-            { q: "Will the formatting of my PDFs be altered?", a: "No, all pages are merged exactly as they appear in the original files." },
-            { q: "Are my confidential documents secure?", a: "Absolutely! The merge process happens offline within your browser, so no documents ever touch our servers." },
-          ].map((faq) => (
+          {faqs.map((faq) => (
             <div key={faq.q} className="pt-4 first:pt-0">
               <dt className="font-semibold text-[hsl(var(--foreground))] text-sm mb-1">{faq.q}</dt>
               <dd className="text-[hsl(var(--muted-foreground))] text-sm leading-relaxed">{faq.a}</dd>
@@ -121,6 +146,14 @@ export default function MergePdfsPage() {
           ))}
         </dl>
       </div>
+
+      {/* Related Tools */}
+      <RelatedTools tools={[
+        { href: "/watermark-pdf", title: "Watermark PDF", description: "Stamp diagonal text watermarks across all PDF pages." },
+        { href: "/image-to-pdf", title: "Image to PDF", description: "Convert JPG/PNG images into a PDF document." },
+        { href: "/compress-image", title: "Compress Image", description: "Reduce image file sizes without losing quality." },
+        { href: "/add-watermark", title: "Watermark Image", description: "Add custom text watermarks to images." },
+      ]} />
     </div>
   );
 }
