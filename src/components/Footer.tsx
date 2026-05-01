@@ -58,14 +58,8 @@ export function Footer() {
         <div>
           <h3 className="font-semibold text-[hsl(var(--foreground))] mb-4">Connect</h3>
           <div className="flex gap-3 mb-4">
-            <a href="#" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors">
-              <Globe className="w-4 h-4" />
-            </a>
             <a href="mailto:praphoolkumar07@gmail.com" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors">
               <Mail className="w-4 h-4" />
-            </a>
-            <a href="#" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors">
-              <LinkIcon className="w-4 h-4" />
             </a>
           </div>
           <p className="text-xs text-[hsl(var(--muted-foreground))]">
