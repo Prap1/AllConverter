@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { BlogSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "How to Merge PDF Files for Free in 2026 – FileNexa Blog",
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function HowToMergePdfsPage() {
   return (
     <div className="min-h-screen">
+      <BlogSchema 
+        title="How to Merge PDFs for Free in 2026: The Complete Guide"
+        description="A comprehensive guide on merging multiple PDF files into one. Learn 4 different methods, including browser-based tools and offline software."
+        date="2026-05-01"
+        url="https://file-nexa.vercel.app/blog/how-to-merge-pdfs"
+      />
       <div className="container mx-auto px-4 sm:px-8 max-w-3xl py-12 md:py-20">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Back to Blog

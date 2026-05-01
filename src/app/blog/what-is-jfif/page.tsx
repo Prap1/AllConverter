@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { BlogSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "What Is a JFIF File? Why Windows Saves Images as JFIF – FileNexa Blog",
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function WhatIsJfifPage() {
   return (
     <div className="min-h-screen">
+      <BlogSchema 
+        title="What Is a JFIF File? Why Windows Saves Images as JFIF"
+        description="Understand what JFIF is and why Microsoft Edge saves images in this format. Learn how to convert JFIF to JPEG and fix compatibility issues."
+        date="2026-04-30"
+        url="https://file-nexa.vercel.app/blog/what-is-jfif"
+      />
       <div className="container mx-auto px-4 sm:px-8 max-w-3xl py-12 md:py-20">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Back to Blog

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { BlogSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "JPG vs PNG: Which Image Format Should You Use? – FileNexa Blog",
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function JpgVsPngPage() {
   return (
     <div className="min-h-screen">
+      <BlogSchema 
+        title="JPG vs PNG: Which Image Format Should You Use?"
+        description="A complete comparison of JPG and PNG image formats. Learn about compression, transparency, file size, quality, and when to use each format for photos, logos, and web graphics."
+        date="2026-04-28"
+        url="https://file-nexa.vercel.app/blog/jpg-vs-png"
+      />
       <div className="container mx-auto px-4 sm:px-8 max-w-3xl py-12 md:py-20">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Back to Blog

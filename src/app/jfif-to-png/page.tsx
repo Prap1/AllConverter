@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import JfifToPngClient from "./JfifToPngClient";
 import { ImageIcon, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
 import { RelatedTools } from "@/components/RelatedTools";
+import { FAQSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "JFIF to PNG Converter – Free, Private, No Upload | FileNexa",
@@ -39,6 +40,7 @@ const faqs = [
 export default function JfifToPngPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl space-y-8 flex-1 flex flex-col">
+      <FAQSchema faqs={faqs} />
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-extrabold tracking-tight">
           JFIF to <span className="text-[hsl(var(--primary))]">PNG</span>

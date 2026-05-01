@@ -71,9 +71,6 @@ export function Footer() {
           <p className="text-xs text-[hsl(var(--muted-foreground))]">
             praphoolkumar07@gmail.com
           </p>
-          <p className="text-xs text-[hsl(var(--muted-foreground))] mt-1">
-            +91 6207982659
-          </p>
         </div>
       </div>
 

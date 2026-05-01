@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import CompressImageClient from "./CompressImageClient";
 import { ImageIcon, CheckCircle, Lightbulb, ListOrdered, HelpCircle } from "lucide-react";
 import { RelatedTools } from "@/components/RelatedTools";
+import { FAQSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Compress Image Online – Reduce JPG, PNG & WebP File Size Free | FileNexa",
@@ -39,6 +40,7 @@ const faqs = [
 export default function CompressImagePage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-24 max-w-4xl space-y-8 flex-1 flex flex-col">
+      <FAQSchema faqs={faqs} />
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-extrabold tracking-tight">
           Compress <span className="text-[hsl(var(--primary))]">Image</span>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { BlogSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "How to Reduce Image File Size Without Losing Quality – FileNexa Blog",
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function HowToReduceImageSizePage() {
   return (
     <div className="min-h-screen">
+      <BlogSchema 
+        title="How to Reduce Image File Size Without Losing Quality"
+        description="Learn 6 expert techniques to compress images without losing quality. Discover how to optimize JPG, PNG, and WebP files for faster web performance."
+        date="2026-04-29"
+        url="https://file-nexa.vercel.app/blog/how-to-reduce-image-size"
+      />
       <div className="container mx-auto px-4 sm:px-8 max-w-3xl py-12 md:py-20">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--primary))] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Back to Blog
