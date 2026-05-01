@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Globe, Mail, Link as LinkIcon } from "lucide-react";
+import { Mail, Instagram, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -58,8 +58,14 @@ export function Footer() {
         <div>
           <h3 className="font-semibold text-[hsl(var(--foreground))] mb-4">Connect</h3>
           <div className="flex gap-3 mb-4">
-            <a href="mailto:praphoolkumar07@gmail.com" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors">
+            <a href="mailto:praphoolkumar07@gmail.com" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors" title="Email Us">
               <Mail className="w-4 h-4" />
+            </a>
+            <a href="https://www.instagram.com/praphool.programmer/" target="_blank" rel="noopener noreferrer" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors" title="Follow us on Instagram">
+              <Instagram className="w-4 h-4" />
+            </a>
+            <a href="https://www.facebook.com/share/14f3wZ6moh6/" target="_blank" rel="noopener noreferrer" className="p-2 bg-[hsl(var(--secondary))] rounded-md text-[hsl(var(--secondary-foreground))] hover:bg-[hsl(var(--primary))] hover:text-[hsl(var(--primary-foreground))] transition-colors" title="Follow us on Facebook">
+              <Facebook className="w-4 h-4" />
             </a>
           </div>
           <p className="text-xs text-[hsl(var(--muted-foreground))]">
