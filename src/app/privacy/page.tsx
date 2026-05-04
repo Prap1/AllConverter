@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy – FileNexa",
   description:
-    "Read the FileNexa Privacy Policy to understand how we handle your data — spoiler: we don't collect any.",
+    "Read the FileNexa Privacy Policy to understand how we handle your data — spoiler: we barely collect any.",
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = "April 13, 2026";
+  const lastUpdated = "May 4, 2026";
 
   return (
     <div className="min-h-screen">
@@ -35,95 +35,181 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4 sm:px-8 max-w-3xl prose prose-neutral dark:prose-invert">
           <div className="space-y-10 text-[hsl(var(--muted-foreground))] text-base leading-relaxed">
 
+            {/* 1. Introduction */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
                 1. Introduction
               </h2>
               <p>
-                Welcome to <strong className="text-[hsl(var(--foreground))]">FileNexa</strong>.
+                Welcome to{" "}
+                <strong className="text-[hsl(var(--foreground))]">FileNexa</strong>.
                 We respect your privacy and are committed to protecting it. This
-                Privacy Policy explains how we collect, use, and safeguard
-                information when you use our website and tools.
+                Privacy Policy explains how we handle information when you use
+                our website and mobile application.
               </p>
             </div>
 
+            {/* 2. Information We Do NOT Collect */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
                 2. Information We Do NOT Collect
               </h2>
               <p>
-                FileNexa processes all files <strong className="text-[hsl(var(--foreground))]">
-                locally in your browser
-                </strong>. This means:
+                FileNexa processes files{" "}
+                <strong className="text-[hsl(var(--foreground))]">
+                  locally on your device or browser
+                </strong>
+                . This means:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>Your files are never uploaded to our servers.</li>
-                <li>We do not store, read, or transmit any file you process.</li>
+                <li>We do not store, read, or share your files.</li>
                 <li>No account or registration is required.</li>
-                <li>We do not sell or share your data with any third party.</li>
               </ul>
             </div>
 
+            {/* 3. Automatically Collected Information */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                3. Automatically Collected Data
+                3. Automatically Collected Information
               </h2>
               <p>
-                Like most websites, our server may automatically log standard
-                information such as your IP address, browser type, and the pages
-                you visit. This data is used solely for operational purposes
-                (e.g., monitoring server health) and is not linked to any
-                personal identity.
+                We may collect limited non-personal information such as:
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-1">
+                <li>Device type and operating system</li>
+                <li>Browser type</li>
+                <li>IP address</li>
+                <li>Pages visited and usage data</li>
+              </ul>
+              <p className="mt-3">
+                This information is used only for improving performance and user
+                experience.
               </p>
             </div>
 
+            {/* 4. Advertising */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                4. Cookies
+                4. Advertising (Google AdSense &amp; AdMob)
               </h2>
               <p>
-                We may use minimal, essential cookies to remember your
-                preferences (e.g., dark/light mode). We do not use tracking
-                cookies or third-party advertising cookies.
+                We use third-party advertising services — specifically{" "}
+                <strong className="text-[hsl(var(--foreground))]">
+                  Google AdSense
+                </strong>{" "}
+                (for our website) and{" "}
+                <strong className="text-[hsl(var(--foreground))]">
+                  Google AdMob
+                </strong>{" "}
+                (for our mobile app). These services may collect and use
+                information such as:
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-1">
+                <li>Device information</li>
+                <li>IP address</li>
+                <li>Advertising identifiers</li>
+                <li>User interaction with ads</li>
+              </ul>
+              <p className="mt-3">
+                This helps serve personalized or non-personalized ads.
+              </p>
+              <p className="mt-3">
+                Learn more about how Google uses data:{" "}
+                <a
+                  href="https://policies.google.com/technologies/ads"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(var(--primary))] hover:underline font-medium"
+                >
+                  policies.google.com/technologies/ads
+                </a>
+              </p>
+              <p className="mt-2">
+                Opt out of personalized advertising:{" "}
+                <a
+                  href="https://www.google.com/settings/ads"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(var(--primary))] hover:underline font-medium"
+                >
+                  google.com/settings/ads
+                </a>
               </p>
             </div>
 
+            {/* 5. Cookies and Tracking Technologies */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                5. Third-Party Services
+                5. Cookies and Tracking Technologies
               </h2>
               <p>
-                FileNexa may link to third-party websites. We are not
-                responsible for the privacy practices of those sites. We
-                encourage you to review their privacy policies independently.
+                We use cookies and similar technologies for:
+              </p>
+              <ul className="list-disc pl-6 mt-2 space-y-1">
+                <li>Essential functionality</li>
+                <li>Remembering your preferences</li>
+                <li>Serving advertisements</li>
+              </ul>
+              <p className="mt-3">
+                Third-party vendors, including Google, may use cookies to serve
+                ads based on your prior visits to our site or other sites on the
+                internet.
               </p>
             </div>
 
+            {/* 6. Third-Party Services */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                6. Children's Privacy
+                6. Third-Party Services
               </h2>
               <p>
-                Our service is not directed to children under the age of 13. We
-                do not knowingly collect personal information from children.
+                We use third-party services such as Google AdSense and AdMob.
+                These services operate under their own privacy policies. We
+                encourage you to review them independently.
               </p>
             </div>
 
+            {/* 7. Children's Privacy */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                7. Changes to This Policy
+                7. Children&apos;s Privacy
+              </h2>
+              <p>
+                Our services are not intended for children under the age of 13.
+                We do not knowingly collect personal information from children.
+              </p>
+            </div>
+
+            {/* 8. Data Security */}
+            <div>
+              <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
+                8. Data Security
+              </h2>
+              <p>
+                We take reasonable measures to protect information. However, no
+                method of transmission over the internet is completely secure,
+                and we cannot guarantee absolute security.
+              </p>
+            </div>
+
+            {/* 9. Changes to This Policy */}
+            <div>
+              <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
+                9. Changes to This Policy
               </h2>
               <p>
                 We may update this Privacy Policy from time to time. Any changes
-                will be reflected on this page with an updated "Last updated"
-                date. Continued use of FileNexa after changes constitutes
-                your acceptance of the revised policy.
+                will be posted on this page with an updated &ldquo;Last
+                updated&rdquo; date. Continued use of FileNexa after changes
+                constitutes your acceptance of the revised policy.
               </p>
             </div>
 
+            {/* 10. Contact Us */}
             <div>
               <h2 className="text-xl font-bold text-[hsl(var(--foreground))] mb-3">
-                8. Contact Us
+                10. Contact Us
               </h2>
               <p>
                 If you have any questions about this Privacy Policy, please
